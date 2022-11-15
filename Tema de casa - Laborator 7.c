@@ -21,7 +21,7 @@ void pop() {
         element = arr[top--];
     }
 }
-void display() {
+void print() {
     if (top == 0) printf("Stiva este goala!\n");
     else {
         printf("Elementele din stiva sunt:\n");
@@ -41,7 +41,7 @@ int main() {
         switch (optiune) {
             case 1: push();    break;
             case 2: pop();     break;
-            case 3: display(); break;
+            case 3: print();   break;
             case 4: exit(0);   break;
             default:
                 printf("Optiune invalida!\n");
@@ -65,15 +65,13 @@ void push(node **list, char character) {
     (*list) = ch;
 }
 int main() {
-    char *string;
-    scanf("%ms", &string);
+    char string[100];
+    scanf("%99s", string);
     node *lista = NULL;
-    for (int i = 0; string[i] != '\0'; i++) {
+    for (int i = 0; string[i] != '\0'; i++)
         push(&lista, string[i]);
-    }
-    for (node *temp = lista; temp != NULL; temp = temp->next) {
+    for (node *temp = lista; temp != NULL; temp = temp->next)
         printf("%c", temp->character);
-    }
     return 0;
 }
 
@@ -100,12 +98,12 @@ int main() {
         push(&lista, (nr % 2));
         nr /= 2;
     }
-    for (node *temp = lista; temp != NULL; temp = temp->next) {
+    for (node *temp = lista; temp != NULL; temp = temp->next)
         printf("%d", temp->number);
-    }
     return 0;
 }
 
 // 7.4. Scrieti o secventa de cod pentru prelucrarea urmatorului sir de caractere: INTREBARE SIMPLA, dupa regula: la fiecare 4 litere se introduce progresiv cate o steluta un asterisk, ca in exemplul: ABCD*ABCD**ABCD***... O literă înseamnă push(), iar un asterisk înseamnă pop(). Care este succesiunea de valori returnate de operațiile pop() când această secvență de operații este efectuată pe o stivă LIFO inițial goală.
+
 
 // 7.5. Scrieti o secventa de cod pentru prelucrarea urmatorului sir de caractere: INTREBARE SIMPLA, dupa regula: la fiecare 4 litere se introduce progresiv cate un asterisk, ca in exemplul: ABCD*ABCD**ABCD***... O literă înseamnă push(), iar un asterisk înseamnă pop() în  următoarea secvență. Dați succesiunea de valori returnate de operațiile pop() când această secvență de operații este efectuată pe o stivă FIFO inițial goală.
