@@ -22,11 +22,13 @@ int main() {
     printf("Introdu un numar de intre 1 si 50: ");
     do {
         scanf("%d", &n);
-    } while (n <= 1 || n >=50);
+    } while (n <= 1 || n >= 50);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     int max = arr[0];
-    for (int i = 0; i < n; i++) if (max < arr[i]) max = arr[i];
+    for (int i = 0; i < n; i++)
+        if (max < arr[i]) max = arr[i];
     printf("Valoarea maxima din vector este: %d\n", max);
     return 0;
 }
@@ -38,13 +40,16 @@ int main() {
     printf("Introdu un numar intre 1 si 50: ");
     do {
         scanf("%d", &n);
-    } while (n <= 1 || n >=50);
+    } while (n <= 1 || n >= 50);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     int min = arr[0];
-    for (int i = 0; i < n; i++) if (min > arr[i]) min = arr[i];
+    for (int i = 0; i < n; i++)
+        if (min > arr[i]) min = arr[i];
     printf("Pozitiile pe care se afla valoarea minima sunt: ");
-    for (int i = 0; i < n; i++) if (min == arr[i]) printf("%d ", i);
+    for (int i = 0; i < n; i++)
+        if (min == arr[i]) printf("%d ", i);
     return 0;
 }
 
@@ -55,10 +60,12 @@ int main() {
     printf("Introdu un numar de intre 1 si 50: ");
     do {
         scanf("%d", &n);
-    } while (n <= 1 || n >=100);
+    } while (n <= 1 || n >= 100);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
-    for (int i = n; i >= 0; i--) printf("%d ", arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for (int i = n; i >= 0; i--)
+        printf("%d ", arr[i]);
     return 0;
 }
 
@@ -105,7 +112,7 @@ int main() {
         if (arr[i] == 0) break;
         (arr[0] % 2 == 0) ? par++ : impar++;
     }
-    printf("Avem % numere pare, si % numere impare\n", par, impar);
+    printf("Avem %d numere pare, si %d numere impare\n", par, impar);
     return 0;
 }
 
@@ -120,9 +127,11 @@ int main() {
     int u[m], v[n];
     if (m < n) {
         printf("Introduceti sirul v: ");
-        for (int i = 0; i < n; i++) scanf("%d", &v[i]);
+        for (int i = 0; i < n; i++)
+            scanf("%d", &v[i]);
         printf("Introduceti sirul u: ");
-        for (int i = 0; i < m; i++) scanf("%d", &u[i]);
+        for (int i = 0; i < m; i++)
+            scanf("%d", &u[i]);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (u[i] == v[j]) {
@@ -143,9 +152,10 @@ int main() {
     printf("Introdu un numar de intre 1 si 50: ");
     do {
         scanf("%d", &n);
-    } while (n <= 1 || n >=50);
+    } while (n <= 1 || n >= 50);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     scanf("%d", &x);
     for (int i = 0; i < n; i++) {
         if (x == arr[i]) {
@@ -158,18 +168,21 @@ int main() {
 
 // Tema 3.10. Să se citească de la tastatură n numere întregi, cu 1 < n < 50 şi să se memoreze într-un vector. Introduceţi de la tastatură un număr întreg x şi calculaţi frecvenţa de apariţie a acestuia în vector. Afişaţi poziţiile  pe care a fost găsit. 
 #include <stdio.h>
-int main(){
-    int n, x, count=0;
+int main() {
+    int n, x, count = 0;
     printf("Introdu un numar de intre 1 si 50: ");
     do {
         scanf("%d", &n);
-    } while (n <= 1 || n >=50);
+    } while (n <= 1 || n >= 50);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     scanf("%d", &x);
-    for (int i = 0; i < n; i++) if (x == arr[i]) count++;
+    for (int i = 0; i < n; i++)
+        if (x == arr[i]) count++;
     printf("Frecventa de aparitie a lui %d este %d\nPozitii gasite: ", x, count);
-    for (int i = 0; i < n; i++) if (x == arr[i]) printf("%d ", i);
+    for (int i = 0; i < n; i++)
+        if (x == arr[i]) printf("%d ", i);
     return 0;
 }
 
@@ -182,11 +195,14 @@ int main() {
         scanf("%d", &n);
     } while (n <= 1 || n >= 50);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
-    for (int i = n; i >= 0; i--) arr[i + 1] = arr[i];
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    for (int i = n; i >= 0; i--)
+        arr[i + 1] = arr[i];
     arr[0] = 0;
-    for (int i = 0; i <= n; i++) printf("%d ", arr[i]);
-	return 0;
+    for (int i = 0; i <= n; i++)
+        printf("%d ", arr[i]);
+    return 0;
 }
 
 // Tema 3.12. Se citesc de la tastatură n numere întregi în ordine crescătoare şi un număr k. Să se insereze k în şirul dat astfel încât acesta să rămână sortat crescător.
@@ -195,11 +211,13 @@ int main() {
     int n, k;
     scanf("%d", &n);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     scanf("%d", &k);
     arr[n] = k;
-    for (int i = 0; i <= n; i++) printf("%d ", arr[i]);
-	return 0;
+    for (int i = 0; i <= n; i++)
+        printf("%d ", arr[i]);
+    return 0;
 }
 
 // Tema 3.13. Fiind dat un vector cu n numere reale diferite, mutaţi maximul din vector pe ultima poziţie a vectorului (prin interschimbarea maximului cu ultimul element).
@@ -208,7 +226,8 @@ int main() {
     int n, pos;
     scanf("%d", &n);
     float arr[n];
-    for (int i = 0; i < n; i++) scanf("%f", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%f", &arr[i]);
     float max = arr[0], temp;
     for (int i = 0; i < n; i++) {
         if (max < arr[i]) {
@@ -219,7 +238,7 @@ int main() {
     temp = arr[n - 1];
     arr[n - 1] = arr[pos];
     arr[pos] = temp;
-    printf("BIG:%f de pe pozitia %d s-a mutat pe ultima pozitie in locul lui LAST%f\n", max, pos, arr[pos]);
+    printf("BIG:%f de pe pozitia %d s-a mutat pe ultima pozitie in locul lui LAST:%f\n", max, pos, arr[pos]);
     return 0;
 }
 
@@ -229,16 +248,19 @@ int main() {
     int n, k, temp;
     scanf("%d", &n);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     scanf("%d", &k);
     for (int i = 0; i < n; i++) {
         if (k == arr[i]) {
             temp = arr[i];
-            for(int j=i; j<n-1; j++) arr[j] = arr[j+1];
-            arr[n-1] = temp;
+            for (int j = i; j < n - 1; j++)
+                arr[j] = arr[j + 1];
+            arr[n - 1] = temp;
         }
     }
-    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
     return 0;
 }
 
@@ -248,24 +270,28 @@ int main() {
     int n;
     scanf("%d", &n);
     int arr[n];
-    for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
     for (int i = 0; i < n; i++) {
         if (arr[i] == 0) {
-            for(int j=i; j<n; j++) arr[j] = arr[j+1];
+            for (int j = i; j < n; j++)
+                arr[j] = arr[j + 1];
             n--;
         }
     }
-    for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    for (int i = 0; i < n; i++)
+        printf("%d ", arr[i]);
     return 0;
 }
 
 // Tema  3.16. Fiind dat un vector cu n elemente, numere întregi citite de la tastatură, mutaţi primul element pe poziţia pe care ar trebui să se găsească dacă vectorul ar fi sortat crescător. Mutaţi de asemenea, toate elemente mai  mici în stânga acestuia, nu neapărat în ordine crescătoare şi toate numerele mai mari în dreapta. Folosiţi o singură parcurgere a vectorului.
 #include <stdio.h>
 int main () {
-    int n, c=0, aux;
+    int n, c = 0, aux;
     scanf("%d", &n);
     int v[n];
-    for (int i = 0; i < n; i++) scanf("%d", &v[i]);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &v[i]);
     for (int i = 1; i < n; i++) {
         if (v[i] < v[c]) {
             aux = v[i];
@@ -286,5 +312,7 @@ int main () {
             }
         }
     }
-    for (int i = 1; i <= n; i++) printf("%d ", v[i]);
+    for (int i = 1; i <= n; i++)
+        printf("%d ", v[i]);
+    return 0;
 }
