@@ -8,14 +8,12 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct node {
     int data;
     struct node *next;
     struct node *prev;
 }
 node;
-
 void push(node **list, int data) {
     node *n = malloc(sizeof(node));
     n->data = data;
@@ -24,7 +22,6 @@ void push(node **list, int data) {
     if ((*list) != NULL) (*list)->prev = n;
     (*list) = n;
 }
-
 void append(node **list, int data) {
     node *n = malloc(sizeof(node));
     node *last = (*list);
@@ -42,7 +39,6 @@ void append(node **list, int data) {
     n->prev = last;
     return;
 }
-
 void deleteFirst(node **list) {
     if ((*list) != NULL) {
         node *toDelete = (*list);
@@ -54,7 +50,6 @@ void deleteFirst(node **list) {
     }
     return;
 }
-
 int main() {
     printf("[*] Initializam lista si cream un vector de 4 elemente\n");
     node *list = NULL;
@@ -68,23 +63,19 @@ int main() {
     printf("[*] Adaugam la inceput in lista elementul %d\n", arr[3]);
     push(&list, arr[3]);
     printf("[+] Printam lista de la stanga la dreapta (inainte):\n   [-] ");
-    for (node *tmp = list; tmp != NULL; tmp = tmp->next) {
+    for (node *tmp = list; tmp != NULL; tmp = tmp->next)
         printf("%d ", tmp->data);
-    }
     printf("\n");
     printf("[*] Stergem primul element din lista\n");
     deleteFirst(&list);
     printf("[+] Printam din nou lista de la stanga la dreapta (inainte):\n   [-] ");
-    for (node *tmp = list; tmp != NULL; tmp = tmp->next) {
+    for (node *tmp = list; tmp != NULL; tmp = tmp->next)
         printf("%d ", tmp->data);
-    }
     printf("\n");
     printf("[+] Cautam in lista elementul %d\n", arr[2]);
-    for (node *tmp = list; tmp != NULL; tmp = tmp->next) {
+    for (node *tmp = list; tmp != NULL; tmp = tmp->next)
         if (tmp->data == arr[2]) {
             printf("   [-] Elementul %d a fost gasit: [%d]\n", arr[2], tmp->data);
-        }
-    }
     printf("[*] Golim ramul de datele folosite de program...\n");
     while (list != NULL) {
         node *tmp = list->next;
