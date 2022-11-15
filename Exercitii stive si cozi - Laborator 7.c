@@ -92,8 +92,9 @@ void push(node **list, int number) {
 
 int main() {
     int nr;
-    scanf("%d", &nr);
-    
+    do {
+        scanf("%d", &nr);
+    } while (n <= 0);
     node *lista = NULL;
     while (nr != 0) {
         push(&lista, (nr % 8));
