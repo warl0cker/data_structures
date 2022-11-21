@@ -104,6 +104,88 @@ int main() {
 }
 
 // 7.4. Scrieti o secventa de cod pentru prelucrarea urmatorului sir de caractere: INTREBARE SIMPLA, dupa regula: la fiecare 4 litere se introduce progresiv cate o steluta un asterisk, ca in exemplul: ABCD*ABCD**ABCD***... O literă înseamnă push(), iar un asterisk înseamnă pop(). Care este succesiunea de valori returnate de operațiile pop() când această secvență de operații este efectuată pe o stivă LIFO inițial goală.
-
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct node {
+    char character;
+    struct node *next;
+}node;
+void push(node **lista, char character) {
+    node *nodNou = malloc(sizeof(node));
+    nodNou->character = character;
+    nodNou->next = (*lista);
+    (*lista) = nodNou;
+    return;
+}
+void pop(node **lista) {
+    node *temp = *lista;
+    *lista = (*lista)->next;
+    free(temp);
+    return;
+}
+int main() {
+    int stars = 1, cnt = 0;
+    const char string[17] = "INTREBARE SIMPLA\n";
+    node *lista = NULL;
+    for (int i = 0; string[i] != '\n'; i++) {
+        push(&lista, string[i]);
+        if (cnt == 4) {
+            for (int j = 0; j < stars; j++) pop(&lista);
+            for (int j = 0; j < stars; j++) push(&lista, '*');
+            stars++;
+            cnt = 0;
+        } else {
+            cnt++;
+        }
+    }
+    for (node *temp = lista; temp != NULL; temp = temp->next)
+        printf("%c ", temp->character);
+    return 0;
+}
 
 // 7.5. Scrieti o secventa de cod pentru prelucrarea urmatorului sir de caractere: INTREBARE SIMPLA, dupa regula: la fiecare 4 litere se introduce progresiv cate un asterisk, ca in exemplul: ABCD*ABCD**ABCD***... O literă înseamnă push(), iar un asterisk înseamnă pop() în  următoarea secvență. Dați succesiunea de valori returnate de operațiile pop() când această secvență de operații este efectuată pe o stivă FIFO inițial goală.
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct node {
+    char character;
+    struct node *next;
+}node;
+void push(node **lista, char character) {
+    node *nodNou = malloc(sizeof(node));
+    nodNou->character = character;
+    nodNou->next = NULL;
+    if(*lista == NULL) *lista = nodNou;
+    else {
+        node *temp = *lista;
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+        temp->next = nodNou;
+    }
+    return;
+}
+void pop(node **lista) {
+    node *temp = *lista;
+    *lista = (*lista)->next;
+    free(temp);
+    return;
+}
+int main() {
+    int stars = 1, cnt = 0;
+    const char string[17] = "INTREBARE SIMPLA\n";
+    node *lista = NULL;
+    for (int i = 0; string[i] != '\n'; i++) {
+        push(&lista, string[i]);
+        if (cnt == 4) {
+            for (int j = 0; j < stars; j++) pop(&lista);
+            for (int j = 0; j < stars; j++) push(&lista, '*');
+            stars++;
+            cnt = 0;
+        } else {
+            cnt++;
+        }
+    }
+    for (node *temp = lista; temp != NULL; temp = temp->next)
+        printf("%c ", temp->character);
+    return 0;
+}
