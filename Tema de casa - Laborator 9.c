@@ -7,46 +7,46 @@ b) Scrieti parcurgerile: InOrdine, PreOrdine si PostOrdine
 c) Descrieti succesiunea de stergere a nodului cu cheia drunk
                           good
                           /  \
-						 /    \
-						/      \
-					   /        \
-					  /          \
-					 /            \
-					/              \
-				  bool         incandescent
-				  / \                \
-				 /   \                \
-				/     \                \
-			   /       \                \
-		   amusing    cool             match
+                         /    \
+                        /      \
+                       /        \
+                      /          \
+                     /            \
+                    /              \
+                  bool         incandescent
+                  / \                \
+                 /   \                \
+                /     \                \
+               /       \                \
+           amusing    cool             match
                          \              / \
                           \            /   \
                            \          /     \
-		                    \        /       \
+                            \        /       \
                           gabby    line    pumped
-						    /      /         / \
-				           /      /         /   \
+                            /      /         / \
+                           /      /         /   \
                           /      /         /     \
-					     /      /         /       \
-					  drunk   kind     memory    undo
-					   / \                        /
-					  /   \                      /
-					 /     \                    /
-					/       \                  /
-				 crayon    flap             trashy
-				            /
-						   /
-						  /
-						 /
-					  elite
-					  
+                         /      /         /       \
+                      drunk   kind     memory    undo
+                       / \                        /
+                      /   \                      /
+                     /     \                    /
+                    /       \                  /
+                 crayon    flap             trashy
+                            /
+                           /
+                          /
+                         /
+                      elite
+
   InOrdine: amusing,bool,cool,crayon,drunk,elite,flap,gabby,good,
             incandescent,kind,line,match,memory,pumped,trashy,undo
  PreOrdine: good,bool,amusing,cool,gabby,drunk,crayon,flap,elite,
             incandescent,match,line,kind,pumped,memory,undo,trashy
 PostOrdine: amusing,crayon,elite,flap,drunk,gabby,cool,bool,kind,
             line,memory,trashy,undo,pumped,match,incandescent,good
-			
+            
 ********************************************************************
 9.2. Pentru un Arbore Binar de Cautare avand cheia un numar intreg
 (a) Scrieți o secventa de cod care returnează numărul elementelor
@@ -87,21 +87,21 @@ reprezentand literele din sirul de caractere: INTREBARESIMPLA,
 in ordinea impusa considerand ca arborele este initial nul.
                    I
                   / \
-				 /   \
-				/     \
-			   /       \
-			  E         N
-			 / \      /   \
-			/   \    /     \
-		   B     E  I       T
-		  /          \     /
-		 /            \   /
-		A              M  R
-		 \            /  / \
-		  \          /  /   \
-		   A        L  P     R
-		                      \
-							   \
-							    S
+                 /   \
+                /     \
+               /       \
+              E         N
+             / \      /   \
+            /   \    /     \
+           B     E  I       T
+          /          \     /
+         /            \   /
+        A              M  R
+         \            /  / \
+          \          /  /   \
+           A        L  P     R
+                              \
+                               \
+                                S
 
 ********************************************************************
