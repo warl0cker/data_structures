@@ -46,7 +46,10 @@ c) Descrieti succesiunea de stergere a nodului cu cheia drunk
             incandescent,match,line,kind,pumped,memory,undo,trashy
 PostOrdine: amusing,crayon,elite,flap,drunk,gabby,cool,bool,kind,
             line,memory,trashy,undo,pumped,match,incandescent,good
-            
+
+Succesiunea de stergerge a cheii "drunk" este:
+Cheia "drunk" se interschimba cu cheia "elite".
+
 ********************************************************************
 9.2. Pentru un Arbore Binar de Cautare avand cheia un numar intreg
 (a) Scrieți o secventa de cod care returnează numărul elementelor
