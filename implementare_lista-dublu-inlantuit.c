@@ -33,8 +33,8 @@ void insertFinal(node **lista, int data) {
     nodNou->prev = temp;
 }
 
-void deletePrim(struct node **lista) {
-    struct node *temp = *lista;
+void deletePrim(node **lista) {
+    node *temp = *lista;
     if (*lista == NULL) {
         printf("Lista nu are noduri!\n");
         return;
