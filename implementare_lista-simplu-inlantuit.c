@@ -15,13 +15,10 @@ void insert(node **lista, int data) {
 
 void deletePrim(node **lista) {
     node *temp = *lista;
-    if (*lista == NULL) {
-        printf("Lista nu are noduri!\n");
-    } else {
-		*lista = (*lista)->next;
-	}
+    if (*lista == NULL) printf("Lista nu are noduri!\n");
+    else *lista = (*lista)->next;
     free(temp);
-	return;
+    return;
 }
 
 void afisare(node *lista) {
