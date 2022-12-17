@@ -26,28 +26,28 @@ INFORMATICIAN, considerand arborele initial vid.
 10.2  Reprezentati Arborele Rosu-Negru  introducand literele cuvantului
 INFORMATICIAN, considerand arborele initial vid.
 
-                            M
+                           [M]
                            / \
                           /   \
                          /     \
                         /       \
-                       /         \         
+                       /         \
                       /           \
                      /             \
                     /               \
-                   I                 O
+                  [I]               [O]
                   / \               / \
                  /   \             /   \
                 /     \           /     \
                /       \         /       \
-              C         I       N         R
+             (C)       [I]     [N]       [R]
              / \         \       \         \
             /   \         \       \         \
            /     \         \       \         \
-          A        F         I       N         T
-           \                                   
-            \                                    
-             \                                   
-              A                             
+         [A]     [F]       (I)     (N)       (T)
+           \
+            \
+             \
+             (A)
 
-*******************************************************************************		
+*******************************************************************************
