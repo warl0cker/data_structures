@@ -1,8 +1,8 @@
 12.1 Pentru expresia: the quick brown fox jumps over the lazy dog:
 a) generati Arborele Huffman asociat
-b)  determinati pentru fiecare caracter codul de substitutie
+b) determinati pentru fiecare caracter codul de substitutie
 c) scrieti forma comprimata a textului de mai sus
-
+d) scrieti forma comprimata a textului: fox on the field
 
 a)                          __________________________43_________________________
                            |                                                     |
@@ -32,6 +32,9 @@ c)
 01011 01010 0011 000 11111 01001 11110 11101 11100 000 11011 01000 0010 11010 11001 000 11000 0010 10111 000
 10110 01001 10101 10100 10011 000 0010 10010 0011 01000 000 01011 01010 0011 000 10001 10000 01111 01100 000
 01110 0010 01101
+
+d)
+11000 0010 10111 000 0010 11001 000 01011 01010 0011 000 11000 11110 0011 10001 01110
 
 *************************************************************************************************************
 12.2 Fie urmatorul arbore binar Huffman:
@@ -96,5 +99,6 @@ b)_____________________________
 |  |  |  |  |  |  |  |  |  | E|
 
 c)
+NETERMINAT! NU INTELEG!
 
 *************************************************************************************************************
