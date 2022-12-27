@@ -39,8 +39,49 @@ Fisierul date.in contine un text format numai din literele mari ale alfabetulu
 1. Scrieti un program C prin care caculati frecventa de aparitie a fiecarui caracter
 din text continut de fisier.
 
+#include <stdio.h>
+#include <string.h>
+int main(){
+    char matrix[] = "C ESTE UN LIMBAJ DE PROGRAMARE STANDARDIZAT. ESTE IMPLEMENTAT PE MAJORITATEA PLATFORMELOR DE CALCUL EXISTENTE AZI SI ESTE CEL MAI POPULAR LIMBAJ DE PROGRAMARE PENTRU SCRIEREA DE SOFTWARE DE SISTEM. ESTE APRECIAT PENTRU EFICIENTA CODULUI OBIECT GENERAT DE COMPILATOARELE C SI PENTRU PORTABILITATEA SA.\n\n"
+                    "A FOST DEZVOLTAT LA INCEPUTUL ANILOR 1970 DE KEN THOMPSON SI DENNIS RITCHIE, CARE AVEAU NEVOIE DE UN LIMBAJ SIMPLU SI PORTABIL PENTRU SCRIEREA NUCLEULUI SISTEMULUI DE OPERARE UNIX.\n\n"
+                    "SINTAXA LIMBAJULUI C A STAT LA BAZA MULTOR LIMBAJE CREATE ULTERIOR SI INCA POPULARE AZI: C++, JAVA, JAVASCRIPT, C#, D.\n\n"
+                    "C ESTE UN LIMBAJ DE PROGRAMARE RELATIV MINIMALIST CE OPEREAZA IN STRANSA LEGATURA CU HARDWARE-UL, FIIND CEL MAI APROPIAT DE LIMBAJUL DE ASAMBLARE FATA DE MAJORITATEA CELORLALTE LIMBAJE DE PROGRAMARE.";
+    int length = strlen(matrix);
+    int freq[length];
+    int count;
+    for (int i = 0; i < length; i++) freq[i] = -1;
+    for (int i = 0; i < length; i++) {
+        count = 1;
+        for (int j = i + 1; j < length; j++) {
+            if (matrix[i] == matrix[j]) {
+                count++;
+                freq[j] = 0;
+            }
+        }
+        if (freq[i] != 0) freq[i] = count;
+    }
+    for (int i = 0; i < length; i++)
+        if (freq[i] != 0) printf("[%c] = %d aparitii\n", matrix[i], freq[i]);
+    return 0;
+}
+
 **************************************************************************************
 Exercitiul 13.4
 Construiti apoi codul Huffman si arborele asociat acestuia.
+
+                                                                   ______________________________________804______________________________________
+                                                                  |                                                                               |
+                               __________________________________454____________________________________                                      ___350___
+                              |                                                                         |                                    |         |
+               _______________42________________                                      _________________412________________                 _144_     _206_
+              |                                 |                                    |                                    |               |     |   |     |
+       _______8_______                 ________34________                   ________119________                   _______293_______       58   86   87   119
+      |               |               |                  |                 |                   |                 |                 |      I     E   A     _
+   ___4___         ___4___         ___10___         ____24____         ____30____         ____89____         ___115___         ___178___
+  |       |       |       |       |        |       |          |       |          |       |          |       |         |       |         |
+ _2_     _2_     _2_     _2_     _4_      _6_     _12_      _12_     _12_      _18_     _35_      _54_     _56_     _59_     _74_     _104_
+|   |   |   |   |   |   |   |   |   |    |   |   |    |    |    |   |    |    |    |   |    |    |    |   |    |   |    |   |    |   |     |
+1   1   1   1   1   1   1   1   2   2    3   3   6    6    6    6   6    6    6   12   13  22    27  27   27  28   29  30   31  43   52   52
+1   9   7   0   K   :   #   -   W   +    X   H   G    Z    .    F   \N   V    ,    J   B    D    C    N   P    M   O    U   S    L   T     R
 
 **************************************************************************************
