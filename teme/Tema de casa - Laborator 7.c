@@ -125,13 +125,13 @@ void pop(node **lista) {
 }
 int main() {
     int stars = 1, cnt = 0;
-    const char string[17] = "INTREBARE SIMPLA\n";
+    const char string[] = "INTREBARE SIMPLA";
     node *lista = NULL;
-    for (int i = 0; string[i] != '\n'; i++) {
+    for (int i = 0; string[i] != '\0'; i++) {
         push(&lista, string[i]);
-        if (cnt == 4) {
+        if (cnt == 3) {
             for (int j = 0; j < stars; j++) pop(&lista);
-            for (int j = 0; j < stars; j++) push(&lista, '*');
+            // for (int j = 0; j < stars; j++) push(&lista, '*');
             stars++;
             cnt = 0;
         } else {
@@ -146,10 +146,12 @@ int main() {
 // 7.5. Scrieti o secventa de cod pentru prelucrarea urmatorului sir de caractere: INTREBARE SIMPLA, dupa regula: la fiecare 4 litere se introduce progresiv cate un asterisk, ca in exemplul: ABCD*ABCD**ABCD***... O literă înseamnă push(), iar un asterisk înseamnă pop() în  următoarea secvență. Dați succesiunea de valori returnate de operațiile pop() când această secvență de operații este efectuată pe o stivă FIFO inițial goală.
 #include <stdio.h>
 #include <stdlib.h>
+
 typedef struct node {
     char character;
     struct node *next;
 }node;
+
 void push(node **lista, char character) {
     node *nodNou = malloc(sizeof(node));
     nodNou->character = character;
@@ -162,23 +164,23 @@ void push(node **lista, char character) {
         }
         temp->next = nodNou;
     }
-    return;
 }
+
 void pop(node **lista) {
     node *temp = *lista;
     *lista = (*lista)->next;
     free(temp);
-    return;
 }
+
 int main() {
     int stars = 1, cnt = 0;
-    const char string[17] = "INTREBARE SIMPLA\n";
+    const char string[] = "INTREBARE SIMPLA";
     node *lista = NULL;
-    for (int i = 0; string[i] != '\n'; i++) {
+    for (int i = 0; string[i] != '\0'; i++) {
         push(&lista, string[i]);
-        if (cnt == 4) {
+        if (cnt == 3) {
             for (int j = 0; j < stars; j++) pop(&lista);
-            for (int j = 0; j < stars; j++) push(&lista, '*');
+            // for (int j = 0; j < stars; j++) push(&lista, '*');
             stars++;
             cnt = 0;
         } else {
